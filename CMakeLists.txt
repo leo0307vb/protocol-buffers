@@ -85,8 +85,8 @@ add_custom_command(
   COMMENT "Generating proto messages for matrix_io ..."
 )
 
-TARGET_LINK_LIBRARIES(${PROJECT_NAME} ${PROTOBUF_LIBRARY})
-include_directories(${CMAKE_CURRENT_BINARY_DIR})
+include_directories(${CMAKE_CURRENT_BINARY_DIR} ${PROTOBUF_INCLUDE_DIR})
+
 add_library(${PROJECT_NAME} ${ProtoHeaders} ${ProtoSources})
 
 install(TARGETS ${PROJECT_NAME} DESTINATION lib)
